@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby -w
+
+root = File.expand_path(File.dirname(__FILE__))
+`cd #{root} && bundle exec stasis -d 3000`
+
