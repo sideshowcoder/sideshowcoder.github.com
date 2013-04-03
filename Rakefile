@@ -9,6 +9,11 @@ task :generate do
   `bundle exec stasis`
 end
 
+desc 'Remove generated files'
+task :clean do
+  rm_rf 'public'
+end
+
 desc 'Publish updated page'
 task :publish => [:generate] do
   Dir.mktmpdir { |dir|
