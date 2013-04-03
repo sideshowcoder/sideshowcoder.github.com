@@ -21,7 +21,7 @@ task :publish => [:generate] do
     current_commit = `git rev-parse --short HEAD`
     `git stash`
     `git checkout master`
-    rm_rf FileList['.'].exclude('.git')
+    rm_rf FileList['*']
     `mv #{dir}/public/* ./`
     `git add -A`
     `git commit -m 'published from #{current_commit}`
