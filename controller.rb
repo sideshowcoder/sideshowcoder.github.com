@@ -1,10 +1,9 @@
 # ignore everything needed to build
-ignore /Gemfile.*/
-ignore /bin/
-ignore /Rakefile/
+ignore 'Gemfile.lock'
+ignore 'Gemfile'
+ignore 'Rakefile'
 # ignore all the git stuff
-ignore /.gitignore/
-ignore /.ruby-version/
-ignore /.git/
-
+ignore '.gitignore'
+ignore '.ruby-version'
+ignore '.git'
 
