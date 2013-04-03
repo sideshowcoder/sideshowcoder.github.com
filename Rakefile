@@ -24,7 +24,7 @@ task :publish => [:generate] do
     rm_rf FileList['*']
     mv FileList["#{dir}/*"], '.'
     `git add -A`
-    `git commit -m 'published from #{current_commit}`
+    `git commit -m 'published from #{current_commit}'`
     `git push origin master`
     `git checkout source`
     `git stash pop`
