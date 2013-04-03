@@ -17,12 +17,11 @@ end
 desc 'Publish updated page'
 task :publish => [:generate] do
   Dir.mktmpdir { |dir|
-    system 'ls -la'
     mv 'public', dir
     current_commit = `git rev-parse --short HEAD`
     `git stash`
     `git checkout master`
-    `rm -rf *`
+    rm_rf FileList['.'].exclude('.git')
     `mv #{dir}/public/* ./`
     `git add -A`
     `git commit -m 'published from #{current_commit}`
